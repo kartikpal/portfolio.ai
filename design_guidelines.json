@@ -1,0 +1,83 @@
+{
+  "theme": "DARK",
+  "archetype": "Archetype 7 (Electric & Neon) + Linear/Anthropic Style",
+  "context": "Portfolio for AI Engineer in Healthcare Genomics (Kartik Pal). Needs to wow recruiters with Anthropic/Linear level polish, dark AI lab aesthetic.",
+  "color_palette": {
+    "background": "#030712",
+    "surface": "#111827",
+    "surface_glass": "rgba(3, 7, 18, 0.7)",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "text_primary": "#f8fafc",
+    "text_secondary": "#94a3b8",
+    "accent_primary": "#00F0FF",
+    "accent_secondary": "#00FF66",
+    "accent_tertiary": "#FF00FF",
+    "muted_accent": "rgba(0, 240, 255, 0.1)"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-black",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "body": "text-base leading-relaxed text-slate-400",
+      "labels": "text-xs uppercase tracking-[0.2em] font-mono text-cyan-400"
+    }
+  },
+  "spacing_and_layout": {
+    "global_padding": "p-8 md:p-16 lg:p-24",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6 md:gap-8",
+    "section_gap": "gap-24 md:gap-32"
+  },
+  "surface_strategies": {
+    "header": "Crystal Glass: backdrop-blur-2xl bg-[#030712]/70 border-b border-white/10 shadow-sm",
+    "cards": "Retro-Futurism/Technical Grid: Flat #111827 background, 1px border-white/10. Hover: border-cyan-500/50 with subtle drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]",
+    "buttons": "Primary: bg-cyan-500 text-black font-semibold hover:bg-cyan-400. Secondary: border border-white/20 bg-transparent text-white hover:bg-white/5",
+    "bento_items": "Use 'Tracing Beam' concept or subtle glows on borders."
+  },
+  "motion_and_interactions": {
+    "hover": "Explicit text color changes, subtle translateY(-2px), glow effects on borders.",
+    "entrance": "Staggered fade-up for bento grid and timeline items.",
+    "special": "Number ticker for '95L', '91%', '7'. Typewriter effect or smooth reveal for chatbot.",
+    "marquee": "Slow, monospace editorial ribbon for tech stack (LLM, MLOps, AWS, GCP, etc.)"
+  },
+  "components_needed": {
+    "hero": "Left aligned text with glowing gradient/noise background or the generated AI Genomics visual as a subtle background (opacity max 40%). Tagline: 'AI Engineer / Data Scientist'. Name: 'Kartik Pal'.",
+    "stats_counter": "Animated numbers row. Items: '₹95L funding raised', '91% Top-5 accuracy', '2+ yrs exp', '7 production systems'.",
+    "chatbot": "'Ask Kartik's AI' - sticky widget or bento card using Shadcn dialog/popover, simulating Gemini 3 Flash.",
+    "projects_bento": "Showcasing VUSPredict, TxGNN, RarePredict, Genomic Variant Explanation Agent. Use varying spans (col-span-4, col-span-8).",
+    "timeline": "Experience & Publications (Elsevier book chapter). Left border line with glowing dots.",
+    "contact": "Hire-me form (Shadcn forms) + Download CV button + LinkedIn link."
+  },
+  "media": {
+    "hero_ai_genomics": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/7ca30155-eaa9-4382-82b3-f72896bfba57/images/bcb0955280bbe21313345d144d9f5c1fbf07a53324081e8a3c2623985a0d57a1.png",
+      "description": "Abstract 3D glowing neural network intertwined with a DNA double helix. Use as hero background or prominent bento card visual. Blend with overlay bg-[#030712]/60."
+    },
+    "background_texture": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/7ca30155-eaa9-4382-82b3-f72896bfba57/images/c2137519e9c1fd5021ba8d9471b6884a6cf92c1f29770cab511bd4f27d1ac0f7.png",
+      "description": "Dark futuristic abstract texture. Use as a subtle noise/texture overlay for the entire page or specific sections."
+    },
+    "project_bento_1": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/7ca30155-eaa9-4382-82b3-f72896bfba57/images/b0fe6b95c72b4805a44939594151cc7a83a3e048f2c2b86bcacb189d5717d680.png",
+      "description": "Abstract representation of data pipelines in a dark lab setting. Use as thumbnail for one of the major projects (e.g., Serverless AWS Genomic Infrastructure or VUSPredict)."
+    }
+  },
+  "icons": {
+    "library": "lucide-react",
+    "instructions": "Use minimal, stroke-based icons. For tech stack, use text labels or SVG icons if available, otherwise rely on clean typography."
+  },
+  "instructions_to_main_agent": [
+    "Install Framer Motion and use it for staggered reveals and number counters.",
+    "Use pure HTML/Tailwind for the main bento grid to achieve E1's asymmetry and overlaps, avoiding rigid Shadcn layouts for the core structure.",
+    "Use Shadcn UI for the Chatbot, Forms, and Buttons.",
+    "Strictly follow the typography scale. Do not exceed text-6xl for the hero.",
+    "Ensure all text has APCA/WCAG compliant contrast, especially over images.",
+    "Do not use default generic blue. Use the provided Cyan/Laser Green for accents.",
+    "Include 'data-testid' on all interactive elements (buttons, links, form inputs)."
+  ]
+}
