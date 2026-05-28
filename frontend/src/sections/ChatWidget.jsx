@@ -22,7 +22,17 @@ function genSessionId() {
 }
 
 export default function ChatWidget({ open, onClose }) {
-  const [sessionId] = useState(() => genSessionId());
+  const [sessionId] = useState(() => {
+    try {
+      const existing = localStorage.getItem("kartik_chat_session");
+      if (existing) return existing;
+      const fresh = genSessionId();
+      localStorage.setItem("kartik_chat_session", fresh);
+      return fresh;
+    } catch {
+      return genSessionId();
+    }
+  });
   const [messages, setMessages] = useState([
     {
       role: "assistant",
