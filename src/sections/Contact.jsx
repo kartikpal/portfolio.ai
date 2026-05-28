@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Download, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Download, Send, CheckCircle2 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { toast } from "sonner";
 import { PROFILE } from "../data/portfolio";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -23,23 +20,35 @@ export default function Contact() {
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  async function onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast.error("Please fill in name, email, and message.");
       return;
     }
     setBusy(true);
-    try {
-      const res = await axios.post(`${API}/contact`, form);
-      toast.success(res.data.message || "Sent!");
-      setDone(true);
-      setForm({ name: "", email: "", company: "", role: "", message: "" });
-    } catch (err) {
-      toast.error("Something went wrong. Please email me directly.");
-    } finally {
-      setBusy(false);
-    }
+
+    const subject = encodeURIComponent(
+      `Portfolio inquiry${form.company ? ` from ${form.company}` : ""}`
+    );
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.name}`,
+        `Email: ${form.email}`,
+        form.company ? `Company: ${form.company}` : null,
+        form.role ? `Role: ${form.role}` : null,
+        "",
+        form.message,
+      ]
+        .filter(Boolean)
+        .join("\n")
+    );
+
+    window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
+    toast.success("Opening your email app.");
+    setDone(true);
+    setForm({ name: "", email: "", company: "", role: "", message: "" });
+    setBusy(false);
   }
 
   return (
@@ -223,10 +232,7 @@ export default function Contact() {
                   className="mt-6 w-full h-12 bg-cyan-400 text-black hover:bg-cyan-300 font-semibold rounded-full"
                 >
                   {busy ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Sending…
-                    </>
+                    "Opening..."
                   ) : (
                     <>
                       <Send className="w-4 h-4 mr-2" />

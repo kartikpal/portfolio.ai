@@ -1,1 +1,22 @@
-# Here are your Instructions
+# Kartik Pal Portfolio
+
+Frontend-only React portfolio app built with Create React App, CRACO, and Tailwind CSS.
+
+## Run Locally
+
+```powershell
+yarn install
+yarn start
+```
+
+Open http://localhost:3002 in your browser.
+
+## Available Scripts
+
+```powershell
+yarn start
+yarn build
+yarn test
+```
+
+The app now lives directly in this `CV` folder. There is no separate `frontend` or `backend` folder.
