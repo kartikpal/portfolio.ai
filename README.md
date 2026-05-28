@@ -11,6 +11,12 @@ yarn start
 
 Open http://localhost:3002 in your browser.
 
+Deployed site:
+
+```text
+https://kartikpal.github.io/portfolio.ai/
+```
+
 ## Available Scripts
 
 ```powershell
