@@ -97,19 +97,8 @@ export const PROJECTS = [
     description:
       "Dockerised genomic pipelines triggered by S3 uploads, secured with NAT Gateway, CloudWatch, and GuardDuty for HIPAA-grade compliance.",
     stack: ["AWS Lambda", "Batch", "Docker", "GuardDuty"],
-    span: "lg:col-span-6",
+    span: "lg:col-span-12",
     accent: "cyan",
-  },
-  {
-    id: "raregem",
-    name: "RareGEM",
-    tagline: "Gemini RAG framework",
-    highlight: "Precision 0.862 · under review",
-    description:
-      "RAG-based Gemini framework for rare-disease phenotyping; outperforms benchmark on BioLarkGSC+.",
-    stack: ["Gemini", "RAG", "Bio-NLP"],
-    span: "lg:col-span-6",
-    accent: "green",
   },
 ];
 
