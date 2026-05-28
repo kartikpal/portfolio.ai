@@ -79,15 +79,25 @@ export default function Hero({ onOpenContact }) {
           </motion.span>
         </motion.h1>
 
-        {/* Sub tagline */}
+        {/* Summary headline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="max-w-2xl text-lg sm:text-xl text-slate-300 leading-relaxed mb-4"
+          className="max-w-3xl text-[15px] sm:text-base text-slate-300 leading-[1.75] mb-6"
           data-testid="hero-tagline"
         >
-          {PROFILE.tagline}
+          {PROFILE.tagline.split(/(₹95 Lakh|RAG|LangGraph|MLOps|2\+ years|AWS and GCP|Published researcher)/g).map((chunk, i) => {
+            const accents = ["₹95 Lakh", "RAG", "LangGraph", "MLOps", "2+ years", "AWS and GCP", "Published researcher"];
+            if (accents.includes(chunk)) {
+              return (
+                <span key={i} className="text-cyan-300 font-semibold">
+                  {chunk}
+                </span>
+              );
+            }
+            return <React.Fragment key={i}>{chunk}</React.Fragment>;
+          })}
         </motion.p>
 
         <motion.p

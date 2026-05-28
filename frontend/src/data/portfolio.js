@@ -9,7 +9,7 @@ export const PROFILE = {
   linkedin: "https://www.linkedin.com/in/kartikpal24/",
   cvUrl: "/Kartik_Pal_CV.pdf",
   tagline:
-    "I design and ship production-grade AI systems end-to-end — from research and modelling to MLOps, cloud, and APIs that scale.",
+    "Founding team member at Vgenomics, where I built AI systems from the ground up — directly enabling ₹95 Lakh (₹75 Lakh from the Technology Development Board, Government of India, and ₹20 Lakh from IIM Bangalore) in external funding and supporting early-stage fundraising efforts. Data Scientist and AI Engineer with 2+ years of experience delivering production-grade ML, MLOps, and LLM-powered systems for high-stakes, data-intensive environments. Core expertise spans retrieval-augmented generation (RAG) pipelines, LangGraph agentic AI, and natural language processing (NLP). Designed event-driven MLOps architectures (MLflow, CI/CD, automated retraining) on AWS and GCP for scalable and robust deployment. Published researcher with peer-reviewed work in advanced NLP and complex data extraction, including genomic variant interpretation and rare disease diagnostics.",
   status: "Open to senior AI / ML Engineer roles",
 };
 
