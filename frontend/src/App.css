@@ -1,34 +1,125 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Kartik Pal Portfolio — Dark AI Lab Aesthetic */
+
+.App {
+  background: #030712;
+  color: #f8fafc;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Noise / grain overlay */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #00f0ff 0%, #00ff66 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.App-link {
-    color: #61dafb;
+/* Neon border glow on hover */
+.neon-card {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.neon-card:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.18), 0 0 60px rgba(0, 240, 255, 0.08);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Glow utility */
+.cyan-glow {
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.45);
 }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
+  50% { opacity: 0.85; transform: scale(1.1); box-shadow: 0 0 0 6px rgba(0, 255, 102, 0); }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #030712; }
+::-webkit-scrollbar-thumb { background: rgba(0, 240, 255, 0.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 240, 255, 0.5); }
+
+/* Selection */
+::selection { background: rgba(0, 240, 255, 0.35); color: #ffffff; }
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center center;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 80%);
+}
+
+/* Tracing border (animated gradient) */
+.tracing-border {
+  position: relative;
+}
+.tracing-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0,240,255,0.6), rgba(0,255,102,0.4), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.tracing-border:hover::before { opacity: 1; }
+
+/* Hero ambient light */
+.hero-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(0, 240, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(0, 255, 102, 0.10), transparent 60%);
+}
+
+/* Typewriter cursor */
+@keyframes blink { 50% { opacity: 0; } }
+.cursor-blink { animation: blink 1s steps(1) infinite; }
+
+/* Section reveal */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.in-view { opacity: 1; transform: translateY(0); }
