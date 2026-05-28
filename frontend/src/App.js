@@ -24,9 +24,9 @@ function Home() {
       <Navbar />
       <Hero onOpenContact={openContact} />
       <Stats />
+      <Skills />
       <Projects />
       <Experience />
-      <Skills />
       <Publications />
       <Contact />
       <Footer />
