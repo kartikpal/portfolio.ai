@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { Menu, X, Download } from "lucide-react";
+import { PROFILE } from "../data/portfolio";
 
 const LINKS = [
   { href: "#projects", label: "Work" },
@@ -10,7 +10,7 @@ const LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-export default function Navbar({ onOpenChat }) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -57,14 +57,15 @@ export default function Navbar({ onOpenChat }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button
-            data-testid="navbar-ask-ai-btn"
-            onClick={onOpenChat}
-            className="hidden sm:inline-flex h-9 px-4 bg-cyan-400 text-black hover:bg-cyan-300 font-semibold rounded-full text-sm"
+          <a
+            href={PROFILE.cvUrl}
+            download
+            data-testid="navbar-download-cv"
+            className="hidden sm:inline-flex items-center gap-1.5 h-9 px-4 bg-cyan-400 text-black hover:bg-cyan-300 font-semibold rounded-full text-sm transition-colors"
           >
-            <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-            Ask AI
-          </Button>
+            <Download className="w-3.5 h-3.5" />
+            CV
+          </a>
           <button
             className="md:hidden text-white"
             data-testid="navbar-menu-toggle"
@@ -76,7 +77,6 @@ export default function Navbar({ onOpenChat }) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-white/10 bg-[#030712]/95 backdrop-blur-2xl">
           <div className="px-6 py-5 flex flex-col gap-4">

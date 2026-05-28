@@ -30,8 +30,8 @@ export default function Projects() {
             </h2>
           </div>
           <p className="max-w-md text-slate-400 leading-relaxed">
-            Seven production AI systems across LLMs, RAG, agentic AI, GNNs, and
-            serverless cloud — each solving a real clinical problem.
+            Production AI systems across LLMs, RAG, agentic AI, GNNs, and
+            serverless cloud — each shipped end-to-end and battle-tested.
           </p>
         </div>
 

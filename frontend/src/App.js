@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
@@ -12,11 +12,8 @@ import Skills from "@/sections/Skills";
 import Publications from "@/sections/Publications";
 import Contact from "@/sections/Contact";
 import Footer from "@/sections/Footer";
-import ChatWidget from "@/sections/ChatWidget";
 
 function Home() {
-  const [chatOpen, setChatOpen] = useState(false);
-
   const openContact = () => {
     const el = document.getElementById("contact");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -24,11 +21,8 @@ function Home() {
 
   return (
     <div className="grain-overlay relative" id="top">
-      <Navbar onOpenChat={() => setChatOpen(true)} />
-      <Hero
-        onOpenChat={() => setChatOpen(true)}
-        onOpenContact={openContact}
-      />
+      <Navbar />
+      <Hero onOpenContact={openContact} />
       <Stats />
       <Projects />
       <Experience />
@@ -37,7 +31,6 @@ function Home() {
       <Contact />
       <Footer />
 
-      <ChatWidget open={chatOpen} onClose={() => setChatOpen(false)} />
       <Toaster
         theme="dark"
         position="bottom-right"

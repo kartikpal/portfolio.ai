@@ -2,14 +2,14 @@
 export const PROFILE = {
   name: "Kartik Pal",
   role: "AI Engineer / Data Scientist",
-  subRole: "Healthcare AI · LLMs · MLOps · Genomics",
+  subRole: "LLMs · RAG · MLOps · Cloud · Production AI",
   location: "Noida, India",
   email: "pal28kartik67@gmail.com",
   phone: "+91 9711660529",
-  linkedin: "https://www.linkedin.com/in/kartik-pal/",
+  linkedin: "https://www.linkedin.com/in/kartikpal24/",
   cvUrl: "/Kartik_Pal_CV.pdf",
   tagline:
-    "I build production-grade AI systems that move medicine forward — from rare-disease diagnostics to drug repurposing.",
+    "I design and ship production-grade AI systems end-to-end — from research and modelling to MLOps, cloud, and APIs that scale.",
   status: "Open to senior AI / ML Engineer roles",
 };
 
@@ -135,8 +135,8 @@ export const SKILLS = [
     items: ["Cloud Run", "Cloud Functions", "Artifact Registry", "Cloud SQL", "Cloud Scheduler"],
   },
   {
-    group: "Healthcare AI",
-    items: ["HPO", "ICD-10", "HL7/FHIR", "HIPAA", "EHR Processing", "ACMG", "Genomics"],
+    group: "Domain & Compliance",
+    items: ["HIPAA", "HL7/FHIR", "Data Pipelines", "EHR Processing", "Knowledge Graphs", "Vector DBs"],
   },
 ];
 
